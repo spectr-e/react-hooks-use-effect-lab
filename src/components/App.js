@@ -1,21 +1,21 @@
-import React, { useState } from "react";
-import Question from "./Question";
-import quiz from "../data/quiz";
+import React, { useState } from "react"
+import Question from "./Question"
+import quiz from "../data/quiz"
 
 function App() {
-  const [questions, setQuestions] = useState(quiz);
-  const [currentQuestionId, setCurrentQuestion] = useState(1);
-  const [score, setScore] = useState(0);
-  const currentQuestion = questions.find((q) => q.id === currentQuestionId);
+  const [questions, setQuestions] = useState(quiz)
+  const [currentQuestionId, setCurrentQuestion] = useState(1)
+  const [score, setScore] = useState(0)
+  const currentQuestion = questions.find((q) => q.id === currentQuestionId)
 
   function handleQuestionAnswered(correct) {
     if (currentQuestionId < questions.length) {
-      setCurrentQuestion((currentQuestionId) => currentQuestionId + 1);
+      setCurrentQuestion((currentQuestionId) => currentQuestionId + 1)
     } else {
-      setCurrentQuestion(null);
+      setCurrentQuestion(null)
     }
     if (correct) {
-      setScore((score) => score + 1);
+      setScore((score) => score + 1)
     }
   }
 
@@ -35,7 +35,7 @@ function App() {
         )}
       </section>
     </main>
-  );
+  )
 }
 
-export default App;
+export default App
